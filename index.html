@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff9f7">
+  <title>Wedding Invitation | OpenWithLove</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="theme-switch" id="themeSwitch" aria-label="Invitation colour theme">
+    <button data-theme="rose" class="selected">Rose</button>
+    <button data-theme="royal">Royal</button>
+    <button data-theme="sage">Sage</button>
+    <button data-theme="temple-gold">Temple Gold</button>
+  </div>
+  <button class="music" id="musicBtn" type="button" aria-label="Play background music">
+    <span class="music-note" aria-hidden="true">♫</span><span id="musicLabel">Play music</span>
+  </button>
+  <audio id="bgMusic" preload="none" loop></audio>
+
+  <main class="invitation">
+    <section class="hero page" id="home" aria-labelledby="heroTitle">
+      <div class="hero-wash" aria-hidden="true"></div>
+      <div class="hero-shadow-arch" aria-hidden="true"></div>
+      <div class="hero-shadow-mandala" aria-hidden="true"></div>
+      <span class="hero-shadow-flower shadow-flower-left" aria-hidden="true">❀<span>❧　✿　❧</span></span>
+      <span class="hero-shadow-flower shadow-flower-right" aria-hidden="true">✿<span>❧　❀　❧</span></span>
+      <div class="sun-rays" aria-hidden="true"></div>
+      <span class="hero-flower flower-a" aria-hidden="true">✿</span>
+      <span class="hero-flower flower-b" aria-hidden="true">❀</span>
+      <p class="eyebrow">A NEW JOURNEY BEGINS</p>
+      <div class="divine-orb" aria-label="A bride and groom's henna-adorned hands meet">
+        <img class="opening-hands-photo" src="assets/photos/indian-ceremony.jpg" alt="">
+        <video class="opening-video" id="openingVideo" muted playsinline preload="auto" aria-hidden="true">
+          <source src="assets/photos/opening-ritual.mp4" type="video/mp4">
+        </video>
+      </div>
+      <h1 id="heroTitle">Two hearts.<br><em>One beautiful<br>beginning.</em></h1>
+      <p class="hero-copy" data-copy="intro"></p>
+      <button class="continue" id="beginBtn" type="button">Tap to Begin <span aria-hidden="true">↓</span></button>
+      <p class="begin-status" id="beginStatus" role="status" aria-live="polite"></p>
+      <div class="scroll-hint">SCROLL TO CELEBRATE</div>
+    </section>
+
+    <section class="couple page" id="couple" aria-label="The couple">
+      <div class="page-atmosphere atmosphere-guests" aria-hidden="true"></div>
+      <div class="paper floral-paper">
+        <div class="corner-flower top-left" aria-hidden="true">✿</div>
+        <div class="corner-flower top-right" aria-hidden="true">❀</div>
+        <div class="arch">
+          <div class="arch-garland" aria-hidden="true">❀　✿　❀　✿　❀</div>
+          <div class="ram-sita-frame">
+            <img id="ramSitaPhoto" class="config-photo" alt="A newlywed Indian couple in traditional wedding attire">
+          </div>
+          <div class="couple-names"><span data-couple="display">Ram &amp; Sita</span></div>
+          <p class="invite-line">We invite you to celebrate our wedding</p>
+          <div class="leaf-divider" aria-hidden="true">❧　❀　❧</div>
+        </div>
+        <p class="paper-foot">WITH THE BLESSINGS OF OUR FAMILIES</p>
+      </div>
+    </section>
+
+    <section class="parents page" aria-label="Blessings of the parents">
+      <div class="page-atmosphere atmosphere-blessings" aria-hidden="true"></div>
+      <div class="paper floral-paper parents-paper">
+        <p class="eyebrow ink">WITH THE BLESSINGS OF</p>
+        <h2>Our beloved families</h2>
+        <div class="parent-block"><span class="lotus" aria-hidden="true">❀</span><p class="small-label">Bride's parents</p><h3 id="brideParents"></h3></div>
+        <div class="ornament" aria-hidden="true">&</div>
+        <div class="parent-block"><span class="lotus" aria-hidden="true">❀</span><p class="small-label">Groom's parents</p><h3 id="groomParents"></h3></div>
+        <p class="parent-note">Request the pleasure of your gracious presence and blessings.</p>
+        <div class="botanical" aria-hidden="true">❧ ❀ ❧</div>
+      </div>
+    </section>
+
+    <section class="muhurtham page" aria-label="Wedding date and muhurtham">
+      <div class="page-atmosphere atmosphere-ceremony" aria-hidden="true"></div>
+      <img class="muhurtham-artwork" src="assets/photos/muhurtham-invitation.png" alt="Floral Muhurtham invitation with the wedding date, 15 August 2026, time, 6:45 AM, ceremony photo, and Ram and Sita's names">
+    </section>
+
+    <section class="events page" aria-label="Wedding events">
+      <div class="page-atmosphere atmosphere-celebration" aria-hidden="true"></div>
+      <div class="paper floral-paper">
+        <p class="eyebrow ink">CELEBRATE WITH US</p>
+        <h2>Wedding Events</h2>
+        <div id="eventList" class="event-list"></div>
+        <div class="botanical" aria-hidden="true">❧ ❀ ❧</div>
+      </div>
+    </section>
+
+    <section class="venue page" aria-label="Wedding venue">
+      <div class="page-atmosphere atmosphere-temple" aria-hidden="true"></div>
+      <div class="paper floral-paper">
+        <p class="eyebrow ink">A SACRED PLACE</p>
+        <h2>Wedding Venue</h2>
+        <div class="temple-art">
+          <img id="templePhoto" class="config-photo" alt="A South Indian temple gopuram lit by ceremonial lamps">
+        </div>
+        <h3 data-venue="name"></h3>
+        <p data-venue="address"></p>
+        <a id="mapLink" class="map-button" target="_blank" rel="noopener noreferrer">View on Map ↗</a>
+        <div class="leaf-border" aria-hidden="true">❧　❀　❧</div>
+      </div>
+    </section>
+
+    <section class="moments page" aria-label="Couple's moments">
+      <div class="page-atmosphere atmosphere-hands" aria-hidden="true"></div>
+      <div class="paper floral-paper">
+        <p class="eyebrow ink">A LITTLE PREVIEW OF FOREVER</p>
+        <h2>Our Moments</h2>
+        <div class="moments-carousel">
+          <button class="gallery-arrow gallery-previous" type="button" aria-label="Previous moment">‹</button>
+          <div id="momentsGrid" class="moments-track" role="region" aria-label="Wedding moments gallery" tabindex="0"></div>
+          <div class="gallery-dots" id="galleryDots" role="group" aria-label="Choose a wedding photo"></div>
+          <button class="gallery-arrow gallery-next" type="button" aria-label="Next moment">›</button>
+          <div class="gallery-footer"><span>SWIPE TO EXPLORE</span><span id="galleryCount" aria-live="polite"></span></div>
+        </div>
+        <div class="botanical" aria-hidden="true">❧ ❀ ❧</div>
+      </div>
+    </section>
+
+    <section class="ending page" aria-label="Countdown and closing message">
+      <div class="page-atmosphere atmosphere-couple" aria-hidden="true"></div>
+      <div class="paper floral-paper countdown-paper">
+        <p class="eyebrow ink">THE COUNTDOWN TO FOREVER</p>
+        <h2>Our New Beginning<br><em>Starts In</em></h2>
+        <div class="countdown" aria-label="Time remaining until the wedding">
+          <div><b id="days">00</b><span>Days</span></div>
+          <div><b id="hours">00</b><span>Hours</span></div>
+          <div><b id="minutes">00</b><span>Minutes</span></div>
+          <div><b id="seconds">00</b><span>Seconds</span></div>
+        </div>
+        <div class="couple-signoff" data-couple="display"></div>
+      </div>
+      <div class="red-ending">
+        <p data-copy="closing"></p>
+        <span data-copy="signature"></span>
+        <strong data-couple="display"></strong>
+        <div class="end-flower" aria-hidden="true">✿</div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="photo-lightbox" id="photoLightbox" aria-label="Moment photo">
+    <button class="lightbox-close" type="button" aria-label="Close photo">×</button>
+    <img id="lightboxImage" alt="">
+    <p id="lightboxCaption"></p>
+  </dialog>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
