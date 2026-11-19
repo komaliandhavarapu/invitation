@@ -1,3 +1,5 @@
+https://komaliandhavarapu.github.io/invitation/
+
 # OpenWithLove — Hindu Wedding Invitation
 
 A mobile-friendly, vertically scrolling Hindu wedding invitation inspired by the supplied references. It uses real wedding and temple photography with cinematic crop, color grading and slow camera movement rather than illustrated people. The page sequence is:
